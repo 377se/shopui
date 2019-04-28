@@ -21,18 +21,20 @@ export default {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  loading: false,
 
   /*
   ** Global CSS
   */
   css: [
+    '~/assets/scss/site.scss'
   ],
 
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
+    { src: '~/plugins/uikit.js', ssr: false }
   ],
 
   /*
@@ -45,9 +47,11 @@ export default {
   /*
   ** Axios module configuration
   */
-  axios: {
-    // See https://github.com/nuxt-community/axios-module#options
-  },
+ axios: {
+  // See https://github.com/nuxt-community/axios-module#options
+  baseURL: 'https://www.samdodds.com/webapi/',
+  browserBaseURL: 'https://www.samdodds.com/webapi/'
+},
 
   /*
   ** Build configuration
