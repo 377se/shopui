@@ -8,6 +8,7 @@ $global-font-family:                            'Roboto', Arial, sans-serif;
 $global-link-color:                             #b00c16;
 $global-link-hover-color:                       #b00c16;
 
+$global-color:                                  #474747;
 $global-inverse-color:                          #fff;
 
 $global-background:                              #fff;
@@ -20,15 +21,15 @@ $global-secondary-background:                    #00B2A9;
 $navbar-background:                             $global-primary-background;
 
 /*Inverse*/
-$inverse-global-color:                          fade($global-inverse-color, 100%);
+$inverse-global-color:                          rgba($global-inverse-color, 1);
 $inverse-global-emphasis-color:                 $global-inverse-color;
-$inverse-global-muted-color:                    fade($global-inverse-color, 90%);
+$inverse-global-muted-color:                    rgba($global-inverse-color, 0.9);
 $inverse-global-inverse-color:                  $global-color;
 
 $inverse-global-primary-background:             $global-inverse-color;
-$inverse-global-muted-background:               fade($global-inverse-color, 10%);
+$inverse-global-muted-background:               rgba($global-inverse-color, 0.1);
 
-$inverse-global-border:                         fade($global-inverse-color, 20%);
+$inverse-global-border:                         rgba($global-inverse-color, 0.2);
 
 // 2. Import default variables and available mixins.
 @import "uikit/src/scss/variables-theme.scss";
