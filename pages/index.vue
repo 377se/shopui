@@ -1,68 +1,58 @@
 <template>
-  <section class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        shopui
-      </h1>
-      <h2 class="subtitle">
-        Shop base 377
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >GitHub</a>
-      </div>
+  <section 
+    class="uk-container uk-padding-small">
+    <div 
+      class="uk-grid uk-grid-match uk-grid-small uk-child-width-1-2 uk-child-width-1-3@s uk-child-width-1-4@m uk-child-width-1-5@l uk-child-width-1-6@xl"
+      uk-grid>
+      <a
+        v-for="article in articlelist"
+        :key="article.Id"
+        class="uk-margin-small-bottom uk-link-reset">
+        <div class="uk-card uk-card-default">
+            <div class="uk-card-media-top">
+                <img :src="article.ImageIdThumb" alt="">
+            </div>
+            <div class="uk-card-body uk-padding-small uk-text-small">
+              <strong>{{ article.HeadCategory }}</strong><br>
+              <span>{{ article.ArticleName }}</span><br>
+              <span>{{ article.PriceDisplay }}</span>
+            </div>
+        </div>
+      </a>
     </div>
   </section>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-
 export default {
   components: {
-    Logo
-  }
+  },
+  data () {
+    return { 
+      products: null,
+      articlelist: []
+    }
+  },
+  mounted(){
+
+  },
+  async asyncData (context) 
+  {
+    try{  
+      let [p] = await Promise.all([ 
+      await context.app.$axios.$get('/sv-SE/webapi//article/GetArticleList?pi=29&ci=303&fi=0')                                                                                                                                                   
+      ])
+      return {
+        products: p,
+        articlelist: p[0].ArticleList
+      }
+      }catch(err){
+      console.log(err);
+    }
+  } 
 }
 </script>
 
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
+<style lang="scss">
 
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
 </style>

@@ -49,8 +49,8 @@ export default {
   */
  axios: {
   // See https://github.com/nuxt-community/axios-module#options
-  baseURL: 'https://www.samdodds.com/webapi/',
-  browserBaseURL: 'https://www.samdodds.com/webapi/'
+  baseURL: 'https://www.samdodds.com',
+  browserBaseURL: 'https://www.samdodds.com'
 },
 
   /*
