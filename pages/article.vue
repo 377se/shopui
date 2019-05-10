@@ -1,5 +1,5 @@
 <template>
-  <section class="uk-container uk-padding">
+  <section class="uk-container uk-padding uk-width-large uk-background-default">
     <ArticlePageHeader v-bind:text="article.Name"></ArticlePageHeader>
     <ArticlePageImages v-bind:images="article.Images"></ArticlePageImages>
     <ArticlePageText v-bind:content="article.Description"></ArticlePageText>

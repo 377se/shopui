@@ -1,5 +1,5 @@
 <template>
-  <h1 class="uk-heading-small">{{text}}</h1>
+  <h3 class="uk-heading-xsmall">{{text}}</h3>
 </template>
 
 <script>
