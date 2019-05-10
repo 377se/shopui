@@ -1,0 +1,178 @@
+{
+  "Id": 7045,
+  "StatusId": 0,
+  "IsCombinedProduct": false,
+  "ArticleNumber": "MT830000",
+  "ImageIdThumb": "",
+  "BrandImage": "https://static.supportersplace.se/brand/nb.png",
+  "TeamName": "Liverpool FC",
+  "BrandId": 4,
+  "Brand": "New Balance",
+  "SortOrder": 0,
+  "DiscountType": 1,
+  "MemberDiscount": 10,
+  "SizeGuideId": 8,
+  "WashingId": 1,
+  "CategoryId": 7,
+  "IsIncludedInCampaign": false,
+  "Description": "<p>Liverpool FC hemmatröja för säsongen 2018/19 från New Balance. </p><p>Historia, tradition och stolthet genomsyrar Liverpool Football Club. Det är något speciellt med klubben och att få representera LFC ska vara ett privilegium. Samma känsla vill man bygga in när man drar på sig den dovt röda tröjan.</p><p>Tröjan har en krage med två knappar och matchande vita detaljer.</p><p>Till minne av de tragiska händelserna på Hillsborough sitter 96 emblemet och de eviga flammorna i nacken.</p>",
+  "LanguageId": 0,
+  "ShopId": 0,
+  "Culture": "sv-SE",
+  "PriceType": 2,
+  "Price": 749.0,
+  "DiscountedPrice": 499.0,
+  "PriceDisplay": "749 SEK",
+  "DiscountedPriceDisplay": "499 SEK",
+  "DisplayPercentageDiscount": "-33%",
+  "HeadCategory": "Liverpool FC",
+  "MetaTitle": "Liverpool Hemmatröja 2018/19 hos Sam Dodds",
+  "MetaDescription": "Köp Liverpool Hemmatröja 2018/19 för 749 kr hos Samdodds.com. Officiell Liverpool-shop för Official Supporters Club Sweden.",
+  "MetaKeywords": "",
+  "MetaImageUrl": null,
+  "Name": "Hemmatröja 2018/19",
+  "ArticleName": "Hemmatröja 2018/19",
+  "UrlSafeName": null,
+  "SEO_Name": "Liverpool FC - Home Jersey 2018/19",
+  "SEO_Description": "Home Jersey 2018/19",
+  "IsPreorder": false,
+  "HasPrint": true,
+  "IsMemberPackage": false,
+  "IsOneSize": false,
+  "ReleaseDate": null,
+  "PublishDate": "2018-04-20 00:00:00",
+  "PreorderDisplay": null,
+  "Label": {
+    "LabelClass": "label-percentage-discount",
+    "LabelMessage": "-33%"
+  },
+  "Color": [{ "Id": 1, "Name": "Röd" }],
+  "Material": "100% Polyester",
+  "Byline": "Officiell Liverpool FC-produkt från New Balance",
+  "FilterGarment": null,
+  "SizeGuide": {
+    "TypeId": 1,
+    "ImageSrc": "",
+    "Description": "",
+    "SizeColumns": [
+      { "DisplayHeader": "Längd", "DisplayDescription": "" },
+      { "DisplayHeader": "Bredd", "DisplayDescription": "" }
+    ],
+    "SizeRows": [
+      {
+        "DisplaySize": "S",
+        "DisplayProperties": [
+          { "Key": "SizeName", "Value": "68" },
+          { "Key": "SizeName", "Value": "52" }
+        ]
+      },
+      {
+        "DisplaySize": "M",
+        "DisplayProperties": [
+          { "Key": "SizeName", "Value": "72" },
+          { "Key": "SizeName", "Value": "54" }
+        ]
+      },
+      {
+        "DisplaySize": "L",
+        "DisplayProperties": [
+          { "Key": "SizeName", "Value": "75" },
+          { "Key": "SizeName", "Value": "56" }
+        ]
+      },
+      {
+        "DisplaySize": "XL",
+        "DisplayProperties": [
+          { "Key": "SizeName", "Value": "77" },
+          { "Key": "SizeName", "Value": "61" }
+        ]
+      },
+      {
+        "DisplaySize": "XXL",
+        "DisplayProperties": [
+          { "Key": "SizeName", "Value": "80" },
+          { "Key": "SizeName", "Value": "68" }
+        ]
+      },
+      {
+        "DisplaySize": "3XL",
+        "DisplayProperties": [
+          { "Key": "SizeName", "Value": "82" },
+          { "Key": "SizeName", "Value": "74" }
+        ]
+      }
+    ]
+  },
+  "WashingGuide": [
+    { "IconName": "pe-ly-iron-low" },
+    { "IconName": "pe-ly-machine-40" },
+    { "IconName": "pe-ly-not-bleach-1" },
+    { "IconName": "pe-ly-not-dry-clean-1" },
+    { "IconName": "pe-ly-tumble-dry-low" }
+  ],
+  "AddOn": {
+    "PrintTypeId": 1,
+    "Name": "",
+    "Number": "",
+    "Patches": false,
+    "District": null,
+    "Price": 0.0,
+    "DisplayPriceName": "129 SEK",
+    "DisplayPriceNumber": "129 SEK",
+    "DisplayPricePatches": "79 SEK",
+    "DisplayPriceDistrict": null,
+    "Names": [
+      { "Name": "A. Becker", "Number": "1" },
+      { "Name": "Alberto.M", "Number": "18" },
+      { "Name": "Alexander-Arnold", "Number": "66" },
+      { "Name": "Bogdan", "Number": "34" },
+      { "Name": "Chamberlain", "Number": "21" },
+      { "Name": "Clyne", "Number": "2" },
+      { "Name": "Fabinho", "Number": "3" },
+      { "Name": "Firmino", "Number": "9" },
+      { "Name": "Flanagan", "Number": "38" },
+      { "Name": "Gomez", "Number": "12" },
+      { "Name": "Grujic", "Number": "16" },
+      { "Name": "Henderson", "Number": "14" },
+      { "Name": "Keita", "Number": "8" },
+      { "Name": "Klavan", "Number": "17" },
+      { "Name": "Lallana", "Number": "20" },
+      { "Name": "Lovren", "Number": "6" },
+      { "Name": "M. Salah", "Number": "11" },
+      { "Name": "Mané", "Number": "10" },
+      { "Name": "Matip", "Number": "32" },
+      { "Name": "Mignolet", "Number": "22" },
+      { "Name": "Milner", "Number": "7" },
+      { "Name": "Origi", "Number": "27" },
+      { "Name": "Robertson", "Number": "26" },
+      { "Name": "Shaqiri", "Number": "23" },
+      { "Name": "Solanke", "Number": "29" },
+      { "Name": "Sturridge", "Number": "15" },
+      { "Name": "Wijnaldum", "Number": "5" },
+      { "Name": "Virgil", "Number": "4" }
+    ],
+    "Districts": null,
+    "ItemId": 0,
+    "IsPreSelected": false,
+    "AddOnTypeId": 0,
+    "Value": null
+  },
+  "SizeList": [
+    { "Value": 44010, "Name": "L" },
+    { "Value": 44011, "Name": "XL" },
+    { "Value": 44012, "Name": "2XL" },
+    { "Value": 44013, "Name": "3XL" }
+  ],
+  "Images": [
+    { "Name": "new-balance-home-jersey-2018-19-7045-1.jpg" },
+    { "Name": "new-balance-home-jersey-2018-19-7045-2.jpg" },
+    { "Name": "new-balance-home-jersey-2018-19-7045-3.jpg" },
+    { "Name": "new-balance-home-jersey-2018-19-7045-4.jpg" },
+    { "Name": "new-balance-home-jersey-2018-19-7045-5.jpg" },
+    { "Name": "new-balance-home-jersey-2018-19-7045-6.jpg" }
+  ],
+  "SafeUrlList": null,
+  "IsPublished": 0,
+  "NumberOfDays": 385,
+  "PrintTypeId": 1
+}

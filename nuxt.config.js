@@ -1,6 +1,11 @@
 import pkg from "./package";
 import * as path from "path";
 
+const baseURL =
+  process.env.NODE_ENV === "production"
+    ? "http://www.samdodds.com"
+    : "http://localhost:3000";
+
 export default {
   mode: "universal",
 
@@ -44,8 +49,8 @@ export default {
    */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
-    baseURL: "https://www.samdodds.com",
-    browserBaseURL: "https://www.samdodds.com"
+    baseURL,
+    browserBaseURL: baseURL
   },
 
   /*
