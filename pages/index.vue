@@ -1,16 +1,12 @@
 <template>
-  <div>
-    <LFCHeader></LFCHeader>
-
-    <section class="uk-container uk-padding-small">
-      <div
-        class="uk-grid uk-grid-match uk-grid-small uk-child-width-1-2 uk-child-width-1-3@s uk-child-width-1-4@m uk-child-width-1-5@l uk-child-width-1-6@xl"
-        uk-grid
-      >
-        <ArticleCard v-for="article in articlelist" :key="article.Id" :article="article"></ArticleCard>
-      </div>
-    </section>
-  </div>
+  <section class="uk-container uk-padding-small">
+    <div
+      class="uk-grid uk-grid-match uk-grid-small uk-child-width-1-2 uk-child-width-1-3@s uk-child-width-1-4@m uk-child-width-1-5@l uk-child-width-1-6@xl"
+      uk-grid
+    >
+      <ArticleCard v-for="article in articlelist" :key="article.Id" :article="article"></ArticleCard>
+    </div>
+  </section>
 </template>
 
 <script>
