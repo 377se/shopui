@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import LoginStatus from "./LoginStatus";
+import LoginStatus from "./login/LoginStatus";
 
 export default {
   components: {
