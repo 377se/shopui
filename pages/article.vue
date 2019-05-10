@@ -1,8 +1,17 @@
 <template>
-  <section class="uk-container uk-padding uk-width-large uk-background-default">
-    <ArticlePageHeader v-bind:text="article.Name"></ArticlePageHeader>
-    <ArticlePageImages v-bind:images="article.Images"></ArticlePageImages>
-    <ArticlePageText v-bind:content="article.Description"></ArticlePageText>
+  <section class="uk-container uk-padding uk-background-default">
+    <div uk-grid>
+      <section class="uk-container uk-width-xlarge">
+        <ArticlePageHeader v-bind:text="article.Name"></ArticlePageHeader>
+        <ArticlePageImages v-bind:images="article.Images"></ArticlePageImages>
+      </section>
+
+      <section class="uk-container uk-width-medium">
+        <ArticlePageText v-bind:content="article.Description"></ArticlePageText>
+        <div uk-text>STORLEKSGUIDE</div>
+        <div uk-text>TVÄTTGUIDE</div>
+      </section>
+    </div>
   </section>
 </template>
 
