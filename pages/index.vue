@@ -1,7 +1,5 @@
 <template>
   <div>
-    <LFCHeader></LFCHeader>
-
     <section class="uk-container uk-padding-small">
       <div
         class="uk-grid uk-grid-match uk-grid-small uk-child-width-1-2 uk-child-width-1-3@s uk-child-width-1-4@m uk-child-width-1-5@l uk-child-width-1-6@xl"
@@ -34,7 +32,7 @@ export default {
     try {
       let [p] = await Promise.all([
         await context.app.$axios.$get(
-          "/sv-SE/webapi//article/GetArticleList?pi=29&ci=303&fi=0"
+          "/sv-SE/webapi/article/GetArticleList?pi=29&ci=303&fi=0"
         )
       ]);
       return {
