@@ -1,0 +1,22 @@
+$global-font-family: "Roboto", Arial, sans-serif;
+
+$global-background: #fff;
+$global-muted-background: #cccccc;
+$global-primary-background: #b00c16;
+$global-secondary-background: #00b2a9;
+
+$global-color: #474747;
+$global-inverse-color: #fff;
+
+$global-link-color: #b00c16;
+$global-link-hover-color: #b00c16;
+
+$inverse-global-color: rgba($global-inverse-color, 1);
+$inverse-global-emphasis-color: $global-inverse-color;
+$inverse-global-muted-color: rgba($global-inverse-color, 0.9);
+$inverse-global-inverse-color: $global-color;
+
+$inverse-global-primary-background: $global-inverse-color;
+$inverse-global-muted-background: rgba($global-inverse-color, 0.1);
+
+$inverse-global-border: rgba($global-inverse-color, 0.2);
