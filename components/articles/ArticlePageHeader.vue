@@ -14,4 +14,8 @@ export default {
 
 <style lang="scss">
 @import "~scss/vars";
+
+h3 {
+  width: 100%;
+}
 </style>
