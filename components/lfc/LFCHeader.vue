@@ -1,11 +1,11 @@
 <template>
-  <nav class="uk-navbar-container uk-margin header" uk-navbar>
+  <nav class="uk-navbar-container uk-margin header uk-margin-remove-bottom" uk-navbar>
     <div class="uk-navbar-left">
       <a class="uk-navbar-toggle hamburger" href="#offscreen-menu" uk-navbar-toggle-icon uk-toggle></a>
     </div>
 
     <div class="uk-navbar-center">
-      <img src="~assets/images/logo-liverpool-sweden.svg" class="logo" uk-svg>
+      <img src="~assets/images/logo-liverpool-sweden.svg" class="logo">
     </div>
 
     <div class="uk-navbar-right">
