@@ -1,6 +1,8 @@
 <template>
   <div uk-text>
-    <img v-bind:src="urls[0]" uk-img>
+    <transition-group>
+      <img v-bind:src="urls[0]" uk-img key="article-image">
+    </transition-group>
   </div>
 </template>
 

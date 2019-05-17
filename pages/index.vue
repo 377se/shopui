@@ -9,7 +9,6 @@
       </div>
     </section>
   </div>
-  
 </template>
 
 <script>
@@ -32,7 +31,7 @@ export default {
     try {
       let [p] = await Promise.all([
         await context.app.$axios.$get(
-          "/sv-SE/webapi/article/GetArticleList?pi=29&ci=303&fi=0"
+          "https://www.samdodds.com/sv-SE/webapi/article/GetArticleList?pi=29&ci=303&fi=0"
         )
       ]);
       return {
@@ -41,6 +40,7 @@ export default {
       };
     } catch (err) {
       console.log(err);
+      console.log(err.request);
     }
   }
 };

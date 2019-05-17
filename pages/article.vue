@@ -39,9 +39,12 @@ export default {
       }
     };
   },
-  async asyncData(context) {
+  async asyncData({ app, query }) {
     try {
-      const article = await context.app.$axios.$get("testproduct.json");
+      const url = `https://www.samdodds.com/sv-SE/webapi/article?id=${
+        query.id
+      }`;
+      const article = await app.$axios.$get(url);
       return { article };
     } catch (err) {
       console.log(err);
