@@ -1,37 +1,17 @@
 <template>
-  <section class="uk-container uk-padding uk-background-default">
-    <div uk-grid>
-      <section class="uk-container uk-width-xlarge">
-        <ArticlePageHeader v-bind:text="article.Name"></ArticlePageHeader>
-        <ArticlePageImages v-bind:images="article.Images"></ArticlePageImages>
-      </section>
-
-      <section class="uk-container uk-width-medium">
-        <ArticlePageText v-bind:content="article.Description"></ArticlePageText>
-        <div uk-text>STORLEKSGUIDE</div>
-        <div uk-text>TVÄTTGUIDE</div>
-      </section>
-    </div>
-  </section>
+  <ArticleDetails v-bind:article="article" v-bind:preloadedImage="preloadedImage"></ArticleDetails>
 </template>
 
 <script>
-import ArticlePageHeader from "@/components/articles/ArticlePageHeader";
-import ArticlePageImages from "@/components/articles/ArticlePageImages";
-import ArticlePageText from "@/components/articles/ArticlePageText";
-import ArticlePageSizeGuide from "@/components/articles/ArticlePageSizeGuide";
-import ArticlePageWashAdvice from "@/components/articles/ArticlePageWashAdvice";
+import ArticleDetails from "@/components/articles/ArticleDetails";
 
 export default {
   components: {
-    ArticlePageHeader,
-    ArticlePageImages,
-    ArticlePageText,
-    ArticlePageSizeGuide,
-    ArticlePageWashAdvice
+    ArticleDetails
   },
   data() {
     return {
+      preloadedImage: null,
       article: {
         Name: "",
         Images: [],
@@ -45,6 +25,15 @@ export default {
         query.id
       }`;
       const article = await app.$axios.$get(url);
+
+      if (query.withThumb) {
+        console.log("article.asyncData: preloadedImage", query.withThumb);
+        return {
+          article,
+          preloadedImage: query.withThumb
+        };
+      }
+
       return { article };
     } catch (err) {
       console.log(err);

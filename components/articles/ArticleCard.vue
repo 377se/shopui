@@ -1,10 +1,8 @@
 <template>
-  <nuxt-link v-bind:to="articleLink" class="uk-margin-small-bottom uk-link-reset">
+  <a v-on:click="handleClick" v-bind:to="articleLink" class="uk-margin-small-bottom uk-link-reset">
     <div class="uk-card uk-card-hover bottom-red-line">
       <div class="uk-card-media-top">
-        <transition-group>
-          <img :src="article.ImageIdThumb" alt key="article-image">
-        </transition-group>
+        <img :src="imageUrl" alt ref="mainImage">
       </div>
       <div class="uk-card-body uk-padding-small uk-padding-remove-bottom uk-text-small">
         <strong>{{ article.HeadCategory }}</strong>
@@ -15,7 +13,7 @@
         class="uk-card-footer uk-padding-small uk-padding-remove-top uk-text-small"
       >{{ article.PriceDisplay }}</div>
     </div>
-  </nuxt-link>
+  </a>
 </template>
 
 <script>
@@ -25,11 +23,31 @@ export default {
     article: {}
   },
   computed: {
+    imageUrl: function() {
+      if (this.article)
+        return (
+          "https://res.cloudinary.com/supportersplace/image/fetch/w_300,f_auto/" +
+          this.article.ImageIdThumb
+        );
+    },
     articleLink: function() {
       return { path: "article", query: { id: this.article.Id } };
     }
   },
-  mounted() {}
+  mounted() {},
+  methods: {
+    handleClick: function() {
+      console.log("clicked", this.article);
+
+      const image = this.$refs.mainImage;
+
+      this.$emit("showArticle", {
+        articleId: this.article.Id,
+        imageSrc: this.imageUrl,
+        image
+      });
+    }
+  }
 };
 </script>
 
