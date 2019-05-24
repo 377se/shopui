@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="uk-heading-xsmall">{{title}}</h1>
+    <h2 class="uk-heading-xsmall">{{title}}</h2>
     <strong class="uk-heading-xsmall">{{subtitle}}</strong>
   </div>
 </template>
@@ -19,7 +19,7 @@ export default {
 <style lang="scss">
 @import "~scss/vars";
 
-h1 {
+h2 {
   width: 100%;
   margin-bottom: 0;
 }
