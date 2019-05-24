@@ -1,7 +1,7 @@
 <template>
-  <section class="uk-container uk-padding uk-background-default">
-    <div uk-grid>
-      <section class="uk-container uk-width-xlarge">
+  <section class="uk-container uk-background-default">
+    <div class="uk-grid uk-flex uk-flex-center uk-align-center uk-padding-small">
+      <section class="uk-container uk-width-1-1 uk-width-2-3@m uk-width-xlarge@l">
         <template v-if="measureImage">
           <ArticlePageImages v-bind:measureImage="measureImage"></ArticlePageImages>
         </template>
@@ -13,8 +13,8 @@
         </template>
       </section>
 
-      <section class="uk-container uk-width-medium">
-        <ArticlePageHeader v-bind:text="article.Name"></ArticlePageHeader>
+      <section class="uk-container uk-width-1-1 uk-width-1-3@m uk-width-medium@l">
+        <ArticlePageHeader v-bind:title="article.Name" v-bind:subtitle="article.Brand"></ArticlePageHeader>
         <ArticlePageText v-bind:content="article.Description"></ArticlePageText>
         <div uk-text>STORLEKSGUIDE</div>
         <div uk-text>TVÄTTGUIDE</div>
