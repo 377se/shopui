@@ -1,5 +1,12 @@
 <template>
-  <a v-on:click="handleClick" v-bind:to="articleLink" class="uk-margin-small-bottom uk-link-reset">
+  <a
+    @click="handleClick"
+    @mousedown="mouseDown"
+    @mouseover="mouseOver"
+    @mouseleave="mouseLeave"
+    v-bind:to="articleLink"
+    class="uk-margin-small-bottom uk-link-reset"
+  >
     <div class="uk-card uk-card-hover bottom-red-line">
       <div class="uk-card-media-top">
         <img :src="imageUrl" alt ref="mainImage">
@@ -17,6 +24,8 @@
 </template>
 
 <script>
+import { TweenLite, TimelineLite } from "gsap";
+
 export default {
   components: {},
   props: {
@@ -36,16 +45,37 @@ export default {
   },
   mounted() {},
   methods: {
-    handleClick: function() {
-      console.log("clicked", this.article);
+    mouseDown: function(event) {
+      const { currentTarget: el } = event;
+      TweenLite.to(el, 0.08, { scale: 0.95 });
+    },
+    mouseOver: function(event) {
+      const { currentTarget: el } = event;
+      TweenLite.to(el, 0.08, { scale: 1.02 });
+    },
+    mouseLeave: function(event) {
+      const { currentTarget: el } = event;
+      TweenLite.to(el, 0.08, { scale: 1 });
+    },
+    handleClick: function(event) {
+      const { currentTarget: el } = event;
+      const t = new TimelineLite();
+      t.to(el, 0.08, {
+        scale: 0.95,
+        zIndex: 0,
+        clearProps: "all",
+        onComplete: () => {
+          const image = this.$refs.mainImage;
 
-      const image = this.$refs.mainImage;
-
-      this.$emit("showArticle", {
-        articleId: this.article.Id,
-        imageSrc: this.imageUrl,
-        image
+          this.$emit("showArticle", {
+            articleId: this.article.Id,
+            imageSrc: this.imageUrl,
+            image
+          });
+        }
       });
+
+      console.log("clicked", this.article);
     }
   }
 };
