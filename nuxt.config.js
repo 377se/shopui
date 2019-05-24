@@ -3,7 +3,7 @@ import * as path from "path";
 
 const baseURL =
   process.env.NODE_ENV === "production"
-    ? "http://www.samdodds.com"
+    ? "https://www.samdodds.com"
     : "http://localhost:3000";
 
 export default {
@@ -41,6 +41,10 @@ export default {
    ** Nuxt.js modules
    */
   modules: [
+    ['storyblok-nuxt', {
+      accessToken: 'bVaQWIr8NpQ6BChPJqnzyAtt',
+      cacheProvider: 'memory'
+    }],
     // Doc: https://axios.nuxtjs.org/usage
     "@nuxtjs/axios"
   ],
