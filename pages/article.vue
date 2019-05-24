@@ -4,6 +4,7 @@
 
 <script>
 import ArticleDetails from "@/components/articles/ArticleDetails";
+import TweenLite from "gsap";
 
 export default {
   components: {
@@ -26,12 +27,14 @@ export default {
       }`;
       const article = await app.$axios.$get(url);
 
-      if (query.withThumb) {
-        console.log("article.asyncData: preloadedImage", query.withThumb);
-        return {
-          article,
-          preloadedImage: query.withThumb
-        };
+      if (process.client) {
+        const { transitionStorage } = window;
+        if (transitionStorage && transitionStorage.withThumb) {
+          return {
+            article,
+            preloadedImage: transitionStorage.withThumb
+          };
+        }
       }
 
       return { article };

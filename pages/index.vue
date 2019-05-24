@@ -25,6 +25,7 @@
 <script>
 import ArticleCard from "@/components/articles/ArticleCard";
 import ArticleDetails from "@/components/articles/ArticleDetails";
+import { TweenLite, Sine } from "gsap";
 
 export default {
   components: {
@@ -57,14 +58,11 @@ export default {
 
   methods: {
     handleShowArticle: function({ articleId, imageSrc, image }) {
-      console.log("handleShowArticle", articleId, image);
-
       this.renderSkeletonArticleDetails(articleId, imageSrc)
         .then(imageBoundingBox => this.transition(image, imageBoundingBox))
         .then(() => this.navigateToArticle(articleId, imageSrc));
     },
     renderSkeletonArticleDetails: function(articleId, imageSrc) {
-      console.log("renderSkeletonArticleDetails");
       const article = this.articles.filter(a => a.id === articleId);
 
       return new Promise(resolve => {
@@ -79,7 +77,6 @@ export default {
       });
     },
     transition: function(image, targetBoundingBox) {
-      console.log("transition", image, targetBoundingBox);
       return new Promise(resolve => {
         const sourceBoundingBox = image.getBoundingClientRect();
 
@@ -87,38 +84,40 @@ export default {
         let offsetX = targetBoundingBox.x - sourceBoundingBox.x;
         let offsetY = targetBoundingBox.y - sourceBoundingBox.y;
 
-        const centerX = sourceBoundingBox.width / 2;
-        const centerY = sourceBoundingBox.height / 2;
-
-        let style = `
-          transform-origin: 0 0 0;
-          transform: translate(${offsetX}px, ${offsetY}px) scale(${scale}) ;
-          position: absolute;
-          z-index: 110;
-          transition: transform 200ms;
-          transition-timing-function: ease-in-out;
-        `;
-        image.style.cssText = style;
+        TweenLite.set(image, {
+          position: "absolute",
+          zIndex: 110,
+          transformOrigin: "0 0 0"
+        });
+        TweenLite.to(image, 0.2, {
+          x: offsetX,
+          y: offsetY,
+          scale: scale,
+          ease: Sine.easeOut,
+          onComplete: resolve
+        });
 
         const whiteout = this.$refs.whiteout;
-        console.log("whiteout", whiteout);
-        whiteout.style.cssText = `
-          visibility: visible;
-          background-color: rgba(255, 255, 255, 255);
-          transition: background-color 150ms;
-          transition-timing-function: ease-in-out;
-        `;
-
-        setTimeout(resolve, 500);
+        TweenLite.set(whiteout, {
+          visibility: "visible",
+          opacity: 0
+        });
+        TweenLite.to(whiteout, 0.1, {
+          opacity: 1,
+          ease: Sine.easeOut
+        });
       });
     },
     navigateToArticle: function(articleId, preloadedImageSrc) {
       console.log("navigateToArticle");
       // TODO: Save preloadeImageSrc in store / session for given articleId key instead
       //  and later replace it with actual image (since that's in the browser cache then)
+      window.transitionStorage = {
+        withThumb: preloadedImageSrc
+      };
       this.$router.push({
         path: "/article",
-        query: { id: articleId, withThumb: preloadedImageSrc }
+        query: { id: articleId }
       });
     }
   }
@@ -137,7 +136,7 @@ export default {
   right: 0;
   top: 0;
   bottom: 0;
-  background-color: rgba(255, 255, 255, 0);
+  background-color: white;
   z-index: 100;
   visibility: hidden;
 }
