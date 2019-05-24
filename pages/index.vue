@@ -91,7 +91,7 @@ export default {
         });
         TweenLite.to(image, 0.2, {
           x: offsetX,
-          y: offsetY,
+          y: offsetY + window.scrollY,
           scale: scale,
           ease: Sine.easeOut,
           onComplete: resolve
