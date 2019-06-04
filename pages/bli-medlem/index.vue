@@ -15,7 +15,7 @@
           <span class="uk-margin-small-right lfc-green" uk-icon="check"/>Utlottningar av resor och priser<br>
           <span class="uk-margin-small-right lfc-green" uk-icon="check"/>Tävlingar med fina priser
         </p>
-        <p>Är du medlem sedan tidigare, logga då in på ditt konto för att förlänga ditt befintliga medlemsskap. Har du glömt eller saknar lösenord kan du enkelt återställa detta.</p>
+        <p>Är du medlem sedan tidigare, använd då den email du är registrerad med på lfc.nu när du betalar.</p>
       </div>
       <h3>Välj medlemspaket (1/3)</h3>
       <div

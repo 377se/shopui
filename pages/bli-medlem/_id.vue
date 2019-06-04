@@ -1,6 +1,8 @@
 <template>
-  <section>
-    <div class="uk-container uk-padding-small">
+  <section
+    style="padding-bottom:80px;">
+    <div 
+      class="uk-container uk-padding-small">
       <h3>Välj dina tillval (2/3)</h3>
       <p class="uk-text-small">Priserna gäller bara då du köper medlemspaket.</p>
       <div
