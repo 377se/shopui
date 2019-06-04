@@ -1,17 +1,22 @@
 <template>
-  <nav class="uk-navbar-container uk-margin header uk-margin-remove-bottom" uk-navbar>
-    <div class="uk-navbar-left">
-      <a class="uk-navbar-toggle hamburger" href="#offscreen-menu" uk-navbar-toggle-icon uk-toggle></a>
-    </div>
+  <div uk-sticky>
+    <nav class="uk-navbar-container uk-margin header uk-margin-remove-bottom" uk-navbar>
+      <div class="uk-navbar-left">
+        <a class="uk-navbar-toggle hamburger" href="#offscreen-menu" uk-navbar-toggle-icon uk-toggle></a>
+      </div>
 
-    <div class="uk-navbar-center">
-      <img src="~assets/images/logo-liverpool-sweden.svg" class="logo">
-    </div>
+      <div class="uk-navbar-center">
+        <img src="~assets/images/logo-liverpool-sweden.svg" class="logo">
+      </div>
 
-    <div class="uk-navbar-right">
-      <LoginStatus></LoginStatus>
-    </div>
-  </nav>
+      <div 
+        v-if="false"
+        class="uk-navbar-right"
+      >
+        <LoginStatus></LoginStatus>
+      </div>
+    </nav>
+  </div>
 </template>
 
 <script>

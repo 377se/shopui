@@ -12,5 +12,7 @@ body {
 body {
   height: 100%;
 }
+
+@mixin hook-button() {text-transform:none;font-size:0.875rem; white-space:nowrap;padding:0 25px;}
 // 4. Import UIkit.
 @import "uikit/src/scss/uikit-theme.scss";
