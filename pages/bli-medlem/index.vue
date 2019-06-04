@@ -1,25 +1,32 @@
 <template>
-  <section class="uk-container uk-padding-small">
-    <div class="uk-text-small">
-      <h2>Bli medlem i LFCs Officiella Svenska Supporterklubb!</h2>
-      <p>Bli medlem i Liverpools svenska supporterklubb och ta del av en härlig röd gemenskap. Genom Sam Dodds säljs medlemsskap till Official Supporters Club Sweden och detta ger dig tillgång till forum, tävlingar, utlottningar och mycket annat i Sveriges bästa supporterklubb. Ett par exempel finns nedan och du hittar  alla medlemsförmåner på lfc.nu.</p>
-      <p class="uk-text-bold">
-        <span class="uk-margin-small-right lfc-green" uk-icon="check"/>10% + 50 kronor hos Sam Dodds<br>
-        <span class="uk-margin-small-right lfc-green" uk-icon="check"/>15% rabatt på O'Learys<br>
-        <span class="uk-margin-small-right lfc-green" uk-icon="check"/>Utlottningar av resor och priser<br>
-        <span class="uk-margin-small-right lfc-green" uk-icon="check"/>Tävlingar med fina priser
-      </p>
-      <p>Är du medlem sedan tidigare, logga då in på ditt konto för att förlänga ditt befintliga medlemsskap. Har du glömt eller saknar lösenord kan du enkelt återställa detta.</p>
+  <section>
+    <div 
+      class="uk-padding-small uk-text-center"
+      style="background:#F6EB61">
+      <h3 class="uk-text-center uk-margin-remove">1999-2019, vi firar 20 år!</h3>
     </div>
-    <h3>Välj medlemspaket (1/3)</h3>
-    <div
-      class="uk-flex uk-flex-center uk-grid uk-child-width-1-2 uk-child-width-1-3@s uk-child-width-1-4@m uk-child-width-1-5@l uk-child-width-1-6@xl"
-      uk-grid>
-      <ArticleCardMember
-        v-for="article in articles"
-        :key="article.Id"
-        :article="article"
-      />
+    <div class="uk-container uk-padding-small">
+      <div class="uk-text-small">
+        <h2>Bli medlem i LFCs Officiella Svenska Supporterklubb!</h2>
+        <p>Bli medlem i Liverpools svenska supporterklubb och ta del av en härlig röd gemenskap. Genom Sam Dodds säljs medlemsskap till Official Supporters Club Sweden och detta ger dig tillgång till forum, tävlingar, utlottningar och mycket annat i Sveriges bästa supporterklubb. Ett par exempel finns nedan och du hittar  alla medlemsförmåner på lfc.nu.</p>
+        <p class="uk-text-bold">
+          <span class="uk-margin-small-right lfc-green" uk-icon="check"/>10% + 50 kronor hos Sam Dodds<br>
+          <span class="uk-margin-small-right lfc-green" uk-icon="check"/>15% rabatt på O'Learys<br>
+          <span class="uk-margin-small-right lfc-green" uk-icon="check"/>Utlottningar av resor och priser<br>
+          <span class="uk-margin-small-right lfc-green" uk-icon="check"/>Tävlingar med fina priser
+        </p>
+        <p>Är du medlem sedan tidigare, logga då in på ditt konto för att förlänga ditt befintliga medlemsskap. Har du glömt eller saknar lösenord kan du enkelt återställa detta.</p>
+      </div>
+      <h3>Välj medlemspaket (1/3)</h3>
+      <div
+        class="uk-flex uk-flex-center uk-grid uk-child-width-1-2 uk-child-width-1-3@s uk-child-width-1-4@m uk-child-width-1-5@l uk-child-width-1-6@xl"
+        uk-grid>
+        <ArticleCardMember
+          v-for="article in articles"
+          :key="article.Id"
+          :article="article"
+        />
+      </div>
     </div>
   </section>
 </template>

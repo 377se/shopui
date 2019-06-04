@@ -10,12 +10,14 @@
       <div class="uk-card-body uk-padding-small uk-padding-remove-bottom uk-text-small">
         <strong>{{ article.HeadCategory }}</strong>
         <br>
-        <span v-if="article.ArticleName!=''">{{ article.ArticleName }}</span>
-        <span v-else>Vuxen 19/20</span>
+        <span>{{ article.ArticleName }}</span>
       </div>
       <div
         class="uk-card-footer uk-padding-small uk-padding-remove-top uk-text-small"
-      >{{ article.PriceDisplay }}</div>
+      >
+          <span class="your-price">{{ article.DiscountedPriceDisplay }}</span> 
+          <span class="orig-price">{{ article.PriceDisplay }}</span>
+      </div>
     </div>
   </nuxt-link>
 </template>
@@ -29,7 +31,13 @@ export default {
 </script>
 <style lang="scss">
 @import "~scss/vars";
-
+.your-price{
+  color:$global-primary-background;
+  font-weight:bold;
+}
+.orig-price{
+  text-decoration:line-through;
+}
 .bottom-red-line {
   border-bottom: 3px solid $global-primary-background;
 }

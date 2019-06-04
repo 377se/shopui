@@ -15,7 +15,9 @@
       </div>
       <div
         class="uk-card-footer uk-padding-small uk-padding-remove-top uk-text-small"
-      >{{ article.PriceDisplay }}</div>
+      >
+        <span class="your-price">{{ article.DiscountedPriceDisplay }}</span> 
+      </div>
     </div>
   </nuxt-link>
 </template>
@@ -29,7 +31,13 @@ export default {
 </script>
 <style lang="scss">
 @import "~scss/vars";
-
+.your-price{
+  color:$global-primary-background;
+  font-weight:bold;
+}
+.orig-price{
+  text-decoration:line-through;
+}
 .bottom-red-line {
   border-bottom: 3px solid $global-primary-background;
 }
