@@ -16,7 +16,7 @@
       <div
         class="uk-card-footer uk-padding-small uk-padding-remove-top uk-text-small"
       >
-        <span class="your-price">{{ article.DiscountedPriceDisplay }}</span> 
+        <span class="your-price">{{ article.PriceDisplay }}</span> 
       </div>
     </div>
   </nuxt-link>

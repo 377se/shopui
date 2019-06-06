@@ -16,13 +16,14 @@
         />
       </div>
       <div>
-        <nuxt-child keep-alive />
+        <nuxt-child 
+          keep-alive />
       </div>
     </div>
     <div 
       class="lfc-checkout-bar uk-background-primary uk-light uk-width-1-1">
         <div class="uk-container uk-padding-small uk-flex uk-flex-middle">
-          <span class="uk-width-expand">Summa</span>
+          <span class="uk-width-expand">Summa {{ total }} {{ currency }}</span>
           <button 
             class="uk-button uk-button-default"
             style="text-transform:none;">Till betalningen!</button>
@@ -32,20 +33,32 @@
 </template>
 <script>
 import ArticleCardSimple from "@/components/articles/ArticleCardSimple";
+import { mapMutations } from 'vuex'
+
 export default {
   components:{
     ArticleCardSimple
   },
   data () {
     return {
-      articles: []
+      articles: [],
+      currency: this.$store.state.currency
     }
   },
-  async asyncData (context) {
+  computed:{
+    total(){
+      return this.$store.state.total
+    }
+  },
+  async fetch ({app, store, params}) {
+    let data = await app.$axios.$get("https://www.samdodds.com/sv-SE/webapi/article?id="+params.id)
+    return store.commit('addmemberpackage', data)
+  },
+  async asyncData ({app, params}) {
     try {
       let [a] = await Promise.all([
-        await context.app.$axios.$get(
-          "https://www.samdodds.com/sv-SE/webapi/article/GetArticleList?rt=Membership&id="+context.route.params.id
+        await app.$axios.$get(
+          "https://www.samdodds.com/sv-SE/webapi/article/GetArticleList?rt=Membership&id="+params.id
         )
       ]);
       return {
