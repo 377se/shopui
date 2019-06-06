@@ -1,11 +1,12 @@
 <template>
-  <nuxt-link
-    class="uk-margin-small-bottom uk-link-reset"
-    :to="'/bli-medlem/'+$route.params.id+'/'+article.Id"
-  >
+  <div>
     <div class="uk-card uk-card-hover bottom-red-line">
       <div class="uk-card-media-top">
-        <img :src="article.ImageIdThumb" alt ref="mainImage">
+        <nuxt-link
+          :to="'/bli-medlem/'+$route.params.id+'/'+article.Id"
+        >
+          <img :src="article.ImageIdThumb" alt ref="mainImage">
+        </nuxt-link>
       </div>
       <div class="uk-card-body uk-padding-small uk-padding-remove-bottom uk-text-small">
         <strong>{{ article.HeadCategory }}</strong>
@@ -63,12 +64,12 @@
         <div class="uk-position-center">
           <button 
             class="uk-button uk-button-secondary"
-            @click.stop.prevent="remove_addon()">Klicka för att ta bort</button>
+            @click.stop.prevent="remove_addon()">Ta bort</button>
         </div>
       </div>
 
     </div>
-  </nuxt-link>
+  </div>
 </template>
 <script>
 import { mapMutations } from 'vuex'
