@@ -7,8 +7,10 @@
     </div>
     <div class="uk-container uk-padding-small">
       <div class="uk-text-small">
-        <h2>Bli medlem i LFCs Officiella Svenska Supporterklubb!</h2>
-        <p>Bli medlem i Liverpools svenska supporterklubb och ta del av en härlig röd gemenskap. Medlemskap i Official Supporters Club Sweden ger dig tillgång till forum, tävlingar, utlottningar och mycket annat i Sveriges bästa supporterklubb. Ett par exempel finns nedan och du hittar  alla medlemsförmåner på lfc.nu.</p>
+        <h2>Bli medlem i LFCs Officiella Svenska Supporterklubb - som fyller 20 år!</h2>
+        <p>
+           <strong>We've conquered all of Europe and we're never gonna stop!</strong><br>
+          1999-2019. I år fyller Liverpools Liverpools svenska supporterklubb 20 år och det kommer hända helt galet mycket kul som du bör ta del av som medlem förutom det vi redan ger i form av tävlingar, utlottningar och mycket annat i Sveriges bästa supporterklubb. Ett par exempel finns nedan och du hittar  alla medlemsförmåner på lfc.nu.</p>
         <p class="uk-text-bold">
           <span class="uk-margin-small-right lfc-green" uk-icon="check"/>10% + 50 kronor hos Sam Dodds<br>
           <span class="uk-margin-small-right lfc-green" uk-icon="check"/>15% rabatt på O'Learys<br>
