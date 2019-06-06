@@ -6,7 +6,7 @@
       <h3>Välj dina tillval (2/3)</h3>
       <p class="uk-text-small">Priserna gäller bara då du köper medlemspaket.</p>
       <div
-        class="uk-flex uk-grid uk-child-width-1-2 uk-child-width-1-4@m"
+        class="uk-grid-small uk-child-width-1-2 uk-child-width-1-4@m"
         uk-height-match="target: > a > .uk-card"
         uk-grid>
         <ArticleCardSimple
@@ -49,6 +49,9 @@ export default {
     total(){
       return this.$store.state.total
     }
+  },
+  mounted(){
+    window.scrollTo(0,0);
   },
   async fetch ({app, store, params}) {
     let data = await app.$axios.$get("https://www.samdodds.com/sv-SE/webapi/article?id="+params.id)

@@ -1,5 +1,6 @@
 <template>
   <div 
+    class="uk-modal"
     id="modal-addon">
     <div class="uk-modal-dialog uk-modal-body">
       <button 
@@ -13,23 +14,15 @@
 </template>
 <script>
 export default {
-  data(){
-    return {
-      showMe: false
-    }
-  },
   watch: {
     '$route' (to, from){
         // Code
     },
     "$route.params.addonid"(value) {
       if(value!=undefined){
-        var _this = this
-        this.showMe = true
         UIkit.modal('#modal-addon').show()
       }else{
         UIkit.modal('#modal-addon').hide()
-        this.showMe = false
       }
     }
   },
@@ -39,19 +32,16 @@ export default {
       // entire view has been rendered
       var _this = this;
       if(_this.$route.params.addonid!=undefined){
-        this.showMe = true
         UIkit.modal('#modal-addon').show()
       }
       UIkit.util.on('#modal-addon','hide',function(){
         if(_this.$route.params.addonid!=undefined)
-          _this.$router.back()
+          _this.$router.push("/bli-medlem/"+_this.$route.params.id)
       })
     })
   }
 }
 </script>
 <style lang="scss">
-.modal-hide{
-  display:none;
-}
+
 </style>
