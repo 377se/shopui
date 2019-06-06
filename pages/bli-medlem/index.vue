@@ -8,7 +8,7 @@
     <div class="uk-container uk-padding-small">
       <div class="uk-text-small">
         <h2>Bli medlem i LFCs Officiella Svenska Supporterklubb!</h2>
-        <p>Bli medlem i Liverpools svenska supporterklubb och ta del av en härlig röd gemenskap. Genom Sam Dodds säljs medlemsskap till Official Supporters Club Sweden och detta ger dig tillgång till forum, tävlingar, utlottningar och mycket annat i Sveriges bästa supporterklubb. Ett par exempel finns nedan och du hittar  alla medlemsförmåner på lfc.nu.</p>
+        <p>Bli medlem i Liverpools svenska supporterklubb och ta del av en härlig röd gemenskap. Medlemskap i Official Supporters Club Sweden ger dig tillgång till forum, tävlingar, utlottningar och mycket annat i Sveriges bästa supporterklubb. Ett par exempel finns nedan och du hittar  alla medlemsförmåner på lfc.nu.</p>
         <p class="uk-text-bold">
           <span class="uk-margin-small-right lfc-green" uk-icon="check"/>10% + 50 kronor hos Sam Dodds<br>
           <span class="uk-margin-small-right lfc-green" uk-icon="check"/>15% rabatt på O'Learys<br>

@@ -13,6 +13,11 @@
 </template>
 <script>
 export default {
+  data(){
+    return {
+      showMe: false
+    }
+  },
   watch: {
     '$route' (to, from){
         // Code
@@ -20,9 +25,11 @@ export default {
     "$route.params.addonid"(value) {
       if(value!=undefined){
         var _this = this
+        this.showMe = true
         UIkit.modal('#modal-addon').show()
       }else{
         UIkit.modal('#modal-addon').hide()
+        this.showMe = false
       }
     }
   },
@@ -31,8 +38,11 @@ export default {
       // Code that will run only after the
       // entire view has been rendered
       var _this = this;
+      if(_this.$route.params.addonid!=undefined){
+        this.showMe = true
+        UIkit.modal('#modal-addon').show()
+      }
       UIkit.util.on('#modal-addon','hide',function(){
-        console.log('hideme')
         if(_this.$route.params.addonid!=undefined)
           _this.$router.back()
       })
@@ -41,5 +51,7 @@ export default {
 }
 </script>
 <style lang="scss">
-
+.modal-hide{
+  display:none;
+}
 </style>

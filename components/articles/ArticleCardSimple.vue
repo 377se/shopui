@@ -23,24 +23,34 @@
         @click.stop.prevent> 
         <div 
           class="uk-width-1-1"
-          uk-form-custom="target: > * > span:first-child">
-          <select>
-            <option value="">Välj storlek...</option>
+          uk-form-custom="target: > .uk-button-default > span:first-child">
+          <select
+            v-model="chosenSize">
+            <option value="-1">Välj storlek...</option>
             <option 
-              v-for="size in article.sizeList"
-              :key="size.Value">{{ size.Name }}</option>
+              v-for="size in article.SizeList"
+              :key="size.Value"
+              :value="size.Value">{{ size.Name }}</option>
           </select>
-          <button class="uk-button uk-button-default uk-width-1-1" type="button" tabindex="-1">
+          <button 
+            class="uk-button uk-button-default uk-width-1-1" 
+            type="button" 
+            tabindex="-1">
               <span></span>
               <span uk-icon="icon: chevron-down"></span>
           </button>
-          <button class="uk-button uk-button-primary uk-width-1-1 uk-margin-small" type="button" tabindex="-1">
-              Lägg till
-          </button>
         </div>
+        <button 
+          class="uk-button uk-button-primary uk-width-1-1 uk-margin-small" 
+          type="button" 
+          tabindex="-1"
+          @click.stop.prevent="add_addon()">
+          Lägg till
+        </button>
       </form>
 
       <div 
+        v-if="isAdded"
         class="uk-overlay-default uk-position-cover"
         @click.stop.prevent>
         <div class="uk-position-top-right">
@@ -51,7 +61,9 @@
           </span>
         </div>
         <div class="uk-position-center">
-          <button class="uk-button uk-button-secondary">Klicka för att ta bort</button>
+          <button 
+            class="uk-button uk-button-secondary"
+            @click.stop.prevent="remove_addon()">Klicka för att ta bort</button>
         </div>
       </div>
 
@@ -59,10 +71,39 @@
   </nuxt-link>
 </template>
 <script>
+import { mapMutations } from 'vuex'
+
 export default {
   components: {},
   props: {
     article: {}
+  },
+  data() {
+    return{
+      chosenSize:-1
+    }
+  },
+  computed:{
+    isAdded(){ 
+      let addons = this.$store.state.addons
+      if(addons.list[this.article.Id]){
+        return true
+      }else{
+        return false
+      }
+    }
+  },
+  methods:{
+    add_addon(){
+      if(this.chosenSize>-1){
+        this.$store.commit('add',{'Id':this.article.Id, 'Article':this.article, 'Size': this.chosenSize})
+      }else{
+        UIkit.modal.alert('Du måste välja en storlek!')
+      }
+    },
+    remove_addon(){
+      this.$store.commit('remove',this.article.Id)
+    }
   }
 }
 </script>
