@@ -32,9 +32,9 @@ export default {
    */
   css: ["~/assets/scss/site.scss"],
   router: {
-    scrollBehavior: function (to, from, savedPosition) {
+    /*scrollBehavior: function (to, from, savedPosition) {
       return { x: 0, y: 0 }
-    }
+    }*/
   },
   /*
    ** Plugins to load before mounting the App
